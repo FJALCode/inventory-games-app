@@ -36,5 +36,8 @@
     "Password": "Contraseña",
     "Repeat Password": "Repetir Contraseña",
     "Register": "Registrarse",
-    "Log in": "Entrar"
+    "Log in": "Entrar",
+    "games_inventory" : "Inventario de Juegos",
+    "username" : "Nombre de usuario"
+
 }
