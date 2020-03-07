@@ -6,16 +6,32 @@
             <form role="form" [formGroup]="myForm" (ngSubmit)="logged(myForm.value)">
                 <div class="form-content">
                     <div class="form-group">
-                        <input formControlName="name" #name type="text" ng-model="name" class="form-control input-underline input-lg" placeholder="{{ 'username' | translate }}">
+                        <input formControlName="userName" type="text" ng-model="name"
+                            class="form-control input-underline input-lg" placeholder="{{ 'username' | translate }}">
+                        <div class="alert alert-danger"
+                            *ngIf="myForm.get('userName').hasError('required') && myForm.controls['userName'].touched">
+                            {{ 'obligatory_field' | translate }}</div>
+                        <div class="alert alert-danger" *ngIf="myForm.get('userName').hasError('minlength')">
+                            {{ 'min_length' | translate }}</div>
                     </div>
 
                     <div class="form-group">
-                        <input formControlName="pass" #pass type="password" class="form-control input-underline input-lg"  placeholder="{{ 'Password' | translate }}">
+                        <input formControlName="pass" type="password" class="form-control input-underline input-lg"
+                            placeholder="{{ 'Password' | translate }}">
+                        <div class="alert alert-danger"
+                            *ngIf="myForm.get('pass').hasError('required') && myForm.controls['pass'].touched">
+                            {{ 'obligatory_field' | translate }}</div>
+                        <div class="alert alert-danger" *ngIf="myForm.get('pass').hasError('minlength')">
+                            {{ 'min_length' | translate }}</div>
+                    </div>
+                    <div class="alert alert-danger"
+                        *ngIf="errorLogged">
+                        {{ 'error_logged' | translate }} 
                     </div>
                 </div>
-                <button class="btn rounded-btn" type="submit">{{ 'Log in' | translate }}</button>
+                <button class="btn rounded-btn" [disabled]=evaluar type="submit">{{ 'Log in' | translate }}</button>
                 <!-- &nbsp; -->
-                <!-- <button class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</button> -->
+                <button class="btn rounded-btn" [routerLink]="['/not-found']">{{ 'Register' | translate }}</button>
             </form>
         </div>
     </div>

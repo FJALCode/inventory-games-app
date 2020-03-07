@@ -38,6 +38,9 @@
     "Register": "Register",
     "Log in": "Log in",
     "games_inventory" : "Games Inventory",
-    "username" : "Username"
+    "username" : "Username",
+    "obligatory_field":"Obligatory field",
+    "min_length":"Must be at least 3 characters",
+    "error_logged":"Incorrect username and/or password"
 
 }
