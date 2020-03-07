@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   DEBUG: true,
-  URL_API: ''
+  URL_API: '',
+  END_POINT: {
+    "test":"test"
+  }
 };
 
 /*

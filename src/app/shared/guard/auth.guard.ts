@@ -11,8 +11,7 @@ export class AuthGuard implements CanActivate {
             var admin = localStorage.getItem('isLoggedin');
             return true;
         }
-
-        this.router.navigate(['']);
+        this.router.navigate(['/access-denied']);
         return false;
     }
 }
